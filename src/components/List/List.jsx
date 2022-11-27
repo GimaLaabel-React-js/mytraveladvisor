@@ -1,18 +1,10 @@
 import React from 'react'
 import PlaceDetails from '../PlaceDetails/PlaceDetails'
 
-const List = () => {
+const List = ({places}) => {
     const [type, setType] = React.useState("restaurants")
     const [rating, setRating] = React.useState('')
-
-    const places = [
-        {name: "Rumuigbo"},
-        {name: "Woji"},
-        {name: "Abuja"},
-        {name: "Agip"},
-        {name: "Trans Amadi"},
-        {name: "Rumuola"}
-    ]
+    
     return (
         <div className="list">
             <h4>Restaurants, Hotels & Attractions around you</h4>
@@ -41,7 +33,7 @@ const List = () => {
             </div>
             <div>
                 {places?.map((place) =>(
-                    <PlaceDetails name={place.name} key={place.name} />
+                    <PlaceDetails place={place} key={place.name} />
                 ))}
             </div>
         </div>

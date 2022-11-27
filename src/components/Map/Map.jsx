@@ -13,11 +13,12 @@ const Map = ({setCoordinates, setBounds, coordinates }) => {
                 defaultZoom={14.0}
                 margin={[50, 50, 50, 50]}
                 options={''}
-                onChange={(e) => ()=>{
-                    setCoordinates({lat: e.center.lat, lng: e.center.lng});
-                    setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw});
+                onChange={(e) => {
+                    console.log(e)
+                    setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw})
+                    setCoordinates({lat: e.center.lat, lng: e.center.lng})
                 }}
-                onChildClick={''} 
+                onChildClick={null} 
                 >
             </GoogleMapReact>
         </div>
